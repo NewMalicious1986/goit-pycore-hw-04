@@ -1,6 +1,4 @@
-from pathlib import Path
-
-def total_salary(path: Path) -> tuple:
+def total_salary(path) -> tuple:
     """
     Calculate the total and average salary from a file.
     Args:
@@ -19,7 +17,9 @@ def total_salary(path: Path) -> tuple:
             for record in records:
                 salary_splitted = record.split(",")
 
-                if len(salary_splitted) < 2:  # if the salary is not in the correct format
+                if (
+                    len(salary_splitted) < 2
+                ):  # if the salary is not in the correct format
                     continue
                 try:
                     total_salary += int(salary_splitted[1])
