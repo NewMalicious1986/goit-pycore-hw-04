@@ -65,9 +65,12 @@ def directory_tree(path, indent=0):
         print(f"{Fore.RED}Permission denied while accessing the specified path.")
     except Exception as e:
         print(f"{Fore.RED}An error occurred: {e}")
-        
-if __name__ == "__main__":
+
+def main():
     if len(sys.argv) < 2:
         print(f"{Fore.RED}Please provide a directory path as an argument.{Style.RESET_ALL}")
     else:
         directory_tree(sys.argv[1])
+        
+if __name__ == "__main__":
+  main()
